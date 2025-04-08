@@ -9,7 +9,7 @@ import { useState } from "react";
 export default function TraditionPage({ params }: { params: { id: string } }) {
   const tradition: Tradition | undefined = traditions.find(
     (t: Tradition) => t.id === params.id
-  ); // Указали тип явно
+  );
   if (!tradition) {
     notFound();
   }
@@ -18,7 +18,6 @@ export default function TraditionPage({ params }: { params: { id: string } }) {
 
   const handleLike = () => {
     setLiked((prev) => !prev);
-    // Дополнительно, можно добавить логику для отправки информации о лайке на сервер
   };
 
   return (

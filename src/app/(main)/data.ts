@@ -2,9 +2,9 @@ export type Tradition = {
   id: string;
   title: string;
   description: string;
-  symbol?: string; // Добавим символ для визуализации
-  origin?: string; // Происхождение традиции
-  regionalVariations?: string; // Региональные особенности
+  symbol?: string;
+  origin?: string;
+  regionalVariations?: string;
 };
 
 export const traditions: Tradition[] = [
