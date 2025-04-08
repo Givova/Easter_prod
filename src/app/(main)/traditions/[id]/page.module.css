@@ -1,0 +1,172 @@
+/* .article {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.title {
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.content {
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.backLink {
+  display: inline-block;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.backLink:hover {
+  color: var(--primary-light);
+}
+
+.likeButton {
+  background: var(--white);
+  border: 2px solid var(--primary);
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: var(--primary);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative; 
+  overflow: hidden; 
+}
+
+.likeButton:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.liked {
+  background: rgba(
+    255,
+    205,
+    0,
+    0.8
+  ); 
+  border-color: rgba(255, 205, 0, 1);
+  color: white;
+}
+
+.likeButton::after {
+  content: "";
+  position: absolute;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 240, 0, 0.5); 
+  border-radius: 50%;
+  transform: scale(0);
+  transition: transform 0.5s ease;
+  top: 50%;
+  left: 50%;
+  z-index: 0; 
+  pointer-events: none; 
+}
+
+.likeButton:hover::after {
+  transform: scale(1); 
+}
+
+.likeButton {
+  z-index: 1; 
+} */
+.article {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column; /* Вертикальная ориентация */
+  align-items: stretch; /* Выравнивание элементов по ширине */
+}
+
+.title {
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.content {
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.backLink {
+  display: inline-block;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.backLink:hover {
+  color: var(--primary-light);
+}
+
+.likeButton {
+  background: var(--white);
+  border: 2px solid var(--primary);
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: var(--primary);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative; /* Для позиционирования эффекта */
+  overflow: hidden; /* Убираем лишнее */
+  align-self: flex-end; /* Выравнивание кнопки по правому краю */
+}
+
+.likeButton:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.liked {
+  background: rgba(255, 205, 0, 0.8); /* Цвет, когда лайкнуто */
+  border-color: rgba(255, 205, 0, 1);
+  color: white;
+}
+
+.likeButton::after {
+  content: "";
+  position: absolute;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 240, 0, 0.5); /* Светлый эффект */
+  border-radius: 50%;
+  transform: scale(0);
+  transition: transform 0.5s ease;
+  top: 50%;
+  left: 50%;
+  z-index: 0; /* Под кнопкой */
+  pointer-events: none; /* Не мешает кликам */
+}
+
+.likeButton:hover::after {
+  transform: scale(1); /* Увеличиваем до 100% при наведении */
+}
+
+.likeButton {
+  z-index: 1; /* Поверх эффекта */
+}
+
+.actionContainer {
+  display: flex; /* Используем flexbox */
+  justify-content: space-between; /* Располагаем элементы по краям */
+  align-items: center; /* Выравниваем по вертикали */
+  margin-top: 2rem; /* Добавляем немного отступа сверху */
+}

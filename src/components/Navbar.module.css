@@ -1,0 +1,126 @@
+/* components/Navbar.module.css */
+.navbar {
+  /* background: linear-gradient(135deg, #8e44ad, #9b59b6); */
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  background: linear-gradient(
+    135deg,
+    #8e44ad 0%,
+    #8e44ad 25%,
+    #9b59b6 25%,
+    #9b59b6 50%,
+    #8e44ad 50%,
+    #8e44ad 75%,
+    #9b59b6 75%,
+    #9b59b6 100%
+  );
+  background-size: 200% 200%;
+  animation: gradientFlow 8s ease infinite;
+}
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo:hover {
+  transform: translateY(-2px);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.navLinks {
+  display: flex;
+  gap: 2rem;
+}
+
+.link {
+  position: relative;
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  transition: all 0.3s ease;
+  outline: none; /* Убираем синее выделение */
+}
+
+/* Эффект подчёркивания */
+.link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: #f1c40f;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.link:hover::after,
+.link:focus-visible::after {
+  width: 100%;
+}
+
+/* Эффект при наведении */
+.link:hover {
+  transform: translateY(-2px);
+}
+
+/* Активная ссылка */
+.activeLink {
+  color: #f1c40f;
+}
+
+.activeLink::after {
+  width: 100%;
+  background: white;
+}
+
+/* Убираем стандартное выделение */
+.link:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(241, 196, 15, 0.4);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .navLinks {
+    gap: 1rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+}
